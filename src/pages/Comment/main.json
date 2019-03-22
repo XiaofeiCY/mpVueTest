@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#ffc72a",
+  "navigationBarTitleText": "第二个",
+  "navigationBarTextStyle":"white",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#ffc72a"
+}

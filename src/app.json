@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/main",
+    "pages/Comment/main",
+    "pages/Me/main"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffc72a",
+    "navigationBarTitleText": "沸城图书",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true,
+    "backgroundColor":"#ffc72a"
+  },
+  "tabBar": {
+    "color": "#ADACAC",
+    "selectedColor": "#ffc72a",
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "图书",
+        "iconPath": "static/images/book.png",
+        "selectedIconPath": "static/images/book-active.png"
+      },
+      {
+        "pagePath": "pages/Comment/main",
+        "text": "评论",
+        "iconPath": "static/images/todo.png",
+        "selectedIconPath": "static/images/todo-active.png"
+      },
+      {
+        "pagePath": "pages/Me/main",
+        "text": "我的",
+        "iconPath": "static/images/me.png",
+        "selectedIconPath": "static/images/me-active.png"
+      }
+    ]
+  }
+}
