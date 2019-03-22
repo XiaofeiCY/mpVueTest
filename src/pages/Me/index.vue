@@ -49,7 +49,7 @@ export default {
         wx.showLoading()
         qcloud.login({
           success: (userInfo) => {
-            console.log('---===', userInfo)
+            console.log('----===', userInfo)
             qcloud.request({
               url: config.userUrl,
               login: true,
