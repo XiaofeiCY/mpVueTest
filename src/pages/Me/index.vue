@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { showSuccess, showLoginInfo } from '@/util'
+import { showSuccess, showLoginInfo, post } from '@/util'
 import qcloud from 'wafer2-client-sdk'
 import config from '@/config'
 import yearProgress from '@/components/YearProgress'
@@ -35,10 +35,26 @@ export default {
     }
   },
   methods: {
+    async addBook (isbn) {
+      console.log('aaa')
+      const res = await post('/weapp/addbook', {
+        isbn,
+        openid: this.FuckInfo.openId
+      })
+      console.log('现在查看这部分信息', res) // 由于豆瓣API开源接口有问题，所以这里都测试不了
+      if (res.code === 0 && res.data.title) {
+        showSuccess(`${res.data.title}添加成功`)
+      } else {
+        showSuccess('豆瓣倒闭了，接口用不了了')
+      }
+    },
     scanBook () {
       wx.scanCode({
-        success (res) {
-          console.log(res)
+        success: (res) => {
+          if (res.result) {
+            this.addBook(res.result)
+          }
+          console.log('扫描结果', res)
         }
       })
     },
@@ -49,7 +65,7 @@ export default {
         wx.showLoading()
         qcloud.login({
           success: (userInfo) => {
-            console.log('---s-3===', userInfo)
+            console.log('---===', userInfo)
             qcloud.request({
               url: config.userUrl,
               login: true,

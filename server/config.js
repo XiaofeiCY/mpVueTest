@@ -53,6 +53,7 @@ const CONF = {
 
     // 微信登录态有效期
     wxLoginExpires: 7200,
+    // eslint-disable-next-line no-dupe-keys
     wxMessageToken: 'abcdefgh'
 }
 
