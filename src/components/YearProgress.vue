@@ -31,7 +31,7 @@ export default {
       start.setMonth(0)
       start.setDate(1)
       // start是今年的第一天d
-      // 今天的时间戳减去今年第一天的时间戳
+      // 今天的时间戳减去今年第一天的时间戳？
       let offset = new Date().getTime() - start.getTime()
       return (offset / 1000 / 60 / 60 / 24) + 1
     },
